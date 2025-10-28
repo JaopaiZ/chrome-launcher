@@ -22,7 +22,7 @@ import tempfile
 import shutil
 
 # Version information
-VERSION = "2.3"
+VERSION = "2.3.1"
 # TODO: Replace with your actual URLs after setting up update server
 # See UPDATE_SERVER_SETUP.md for instructions
 UPDATE_CHECK_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"  
