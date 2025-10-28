@@ -22,9 +22,11 @@ import tempfile
 import shutil
 
 # Version information
-VERSION = "2.2.0"
-UPDATE_CHECK_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/refs/heads/main/version.json"
-DOWNLOAD_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/refs/heads/main/chrome_launcher_ui_v2.2.py"
+VERSION = "2.2.1"
+# TODO: Replace with your actual URLs after setting up update server
+# See UPDATE_SERVER_SETUP.md for instructions
+UPDATE_CHECK_URL = ""  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"
+DOWNLOAD_URL = ""  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"
 
 
 def extract_number_from_email(email: str) -> int:
@@ -50,6 +52,10 @@ class AutoUpdater:
     
     def check_for_updates(self) -> Optional[Dict]:
         """Check if updates are available"""
+        # Skip if URLs not configured
+        if not self.update_url or not self.update_url.strip():
+            return None
+        
         try:
             with urllib.request.urlopen(self.update_url, timeout=5) as response:
                 data = json.loads(response.read().decode('utf-8'))
@@ -754,7 +760,7 @@ class ChromeLauncherUI:
             '3': 'https://www.netflix.com/account',
             '4': 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox',
             '5': 'https://www.apps.disneyplus.com/th/home',
-            '6': 'https://www.primevideo.com/-/th/signup',
+            '6': 'https://www.amazon.co.jp/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Ffe.primevideo.com%2F-%2Fth%2Fauth%2Freturn%2Fref%3Dav_auth_ap%3F_t%3D1sgzTDns4t7gd-8UOQzo_N8oWYqanknQtan8iEIUqcfGcLAAAAAQAAAABo_gp2cmF3AAAAAPgWC9WfHH8iB-olH_E9xQ%26language%3Dth%26location%3Dhttps%3A%2F%2Fwww.primevideo.com%2F-%2Fth%2Fsignup%3Fref_%253Ddvm_pds_amz_th_vc_s_g_mkw_p442-kw163-cr551-c%2526language%253Dth&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_prime_video_sso_fe&openid.mode=checkid_setup&countryCode=TH&siteState=356-1529016-7516146&language=th_TH&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0',
             '7': 'https://auth.hbomax.com/login'
         }
         
@@ -789,8 +795,8 @@ class ChromeLauncherUI:
         self.populate_fav_list()
         self.update_quick_launch_buttons()
         
-        # Check for updates
-        if self.config.auto_update_check == '1':
+        # Check for updates (only if URLs are configured)
+        if self.config.auto_update_check == '1' and UPDATE_CHECK_URL and UPDATE_CHECK_URL.strip():
             self.root.after(1000, self.check_for_updates_async)
     
     def check_for_updates_async(self):
@@ -862,8 +868,15 @@ class ChromeLauncherUI:
     
     def manual_check_update(self):
         """Manually check for updates"""
-        self.status_label.config(text='Checking for updates...')
-        self.root.update()
+        try:
+            self.status_label.config(text='Checking for updates...')
+        except Exception:
+            pass
+        
+        try:
+            self.root.update()
+        except Exception:
+            pass
         
         try:
             update_info = self.updater.check_for_updates()
@@ -876,10 +889,16 @@ class ChromeLauncherUI:
                     f'You are running the latest version (v{VERSION})'
                 )
             
-            self.status_label.config(text='')
+            try:
+                self.status_label.config(text='')
+            except Exception:
+                pass
         except Exception as e:
             messagebox.showerror('Update Check Failed', 'Could not check for updates.\nPlease check your internet connection.')
-            self.status_label.config(text='')
+            try:
+                self.status_label.config(text='')
+            except Exception:
+                pass
             self.logger.write(f'Manual update check failed: {str(e)}')
     
     def launch_from_cli(self):
@@ -1120,7 +1139,7 @@ class ChromeLauncherUI:
         # URL Group with Multiple URLs
         url_frame = tk.LabelFrame(
             self.root,
-            text='URL - เลือกโปรไฟล์ด้านล่าง ตรวจสอบ URL ที่จะเปิด จากนั้นคลิก "เปิด URL หลายรายการ',
+            text='URLs - Select profile below, check URLs to open, then click "Open Multiple URLs"',
             font=('Segoe UI', 10),
             fg=self.text,
             bg=self.panel_bg
@@ -1130,13 +1149,13 @@ class ChromeLauncherUI:
         # Create checkboxes for all URLs
         self.url_vars = {}
         urls_to_show = [
-            ('1', 'YouTube Premium ดูวันที่ตัดบัคร'),
-            ('2', 'YouTube Family เชิญ/ลบ สมาชิก'),
-            ('3', 'Netflix เชิญ/ลบ สมาชิก'),
-            ('4', 'Gmail รับ OTP'),
-            ('5', 'Disney+ สำหรับเข้าสู่ระบบ'),
-            ('6', 'Prime Video ยังใช้ไม่ได้'),
-            ('7', 'HBO Max สำหรับเข้าสู่ระบบ')
+            ('1', 'YouTube Premium'),
+            ('2', 'Google Family'),
+            ('3', 'Netflix'),
+            ('4', 'Gmail'),
+            ('5', 'Disney+'),
+            ('6', 'Amazon Prime'),
+            ('7', 'HBO Max')
         ]
         
         # First row
