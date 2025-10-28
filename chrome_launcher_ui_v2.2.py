@@ -25,8 +25,10 @@ import shutil
 VERSION = "2.3"
 # TODO: Replace with your actual URLs after setting up update server
 # See UPDATE_SERVER_SETUP.md for instructions
-UPDATE_CHECK_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"
-DOWNLOAD_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"
+UPDATE_CHECK_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"  
+# Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"
+DOWNLOAD_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"  
+# Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"
 
 
 def extract_number_from_email(email: str) -> int:
@@ -761,7 +763,8 @@ class ChromeLauncherUI:
             '4': 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox',
             '5': 'https://www.apps.disneyplus.com/th/home',
             '6': 'primevideo.com/-/th/signup',
-            '7': 'https://auth.hbomax.com/login'
+            '7': 'https://tenor.com/view/i-love-you-love-loving-kannon-27snowball-gif-4796898195696207031'
+            # '7': 'https://auth.hbomax.com/login'
         }
         
         # Handle CLI mode
