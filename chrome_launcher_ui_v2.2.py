@@ -22,11 +22,11 @@ import tempfile
 import shutil
 
 # Version information
-VERSION = "2.2.1"
+VERSION = "2.3"
 # TODO: Replace with your actual URLs after setting up update server
 # See UPDATE_SERVER_SETUP.md for instructions
-UPDATE_CHECK_URL = ""  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"
-DOWNLOAD_URL = ""  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"
+UPDATE_CHECK_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/version.json"
+DOWNLOAD_URL = "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"  # Example: "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/main/chrome_launcher_ui_v2.2.py"
 
 
 def extract_number_from_email(email: str) -> int:
@@ -760,7 +760,7 @@ class ChromeLauncherUI:
             '3': 'https://www.netflix.com/account',
             '4': 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox',
             '5': 'https://www.apps.disneyplus.com/th/home',
-            '6': 'https://www.amazon.co.jp/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Ffe.primevideo.com%2F-%2Fth%2Fauth%2Freturn%2Fref%3Dav_auth_ap%3F_t%3D1sgzTDns4t7gd-8UOQzo_N8oWYqanknQtan8iEIUqcfGcLAAAAAQAAAABo_gp2cmF3AAAAAPgWC9WfHH8iB-olH_E9xQ%26language%3Dth%26location%3Dhttps%3A%2F%2Fwww.primevideo.com%2F-%2Fth%2Fsignup%3Fref_%253Ddvm_pds_amz_th_vc_s_g_mkw_p442-kw163-cr551-c%2526language%253Dth&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_prime_video_sso_fe&openid.mode=checkid_setup&countryCode=TH&siteState=356-1529016-7516146&language=th_TH&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0',
+            '6': 'primevideo.com/-/th/signup',
             '7': 'https://auth.hbomax.com/login'
         }
         
@@ -771,7 +771,7 @@ class ChromeLauncherUI:
         
         # Create UI
         self.root = tk.Tk()
-        self.root.title(f'Chrome Profile Launcher ULTRA v{VERSION}')
+        self.root.title(f'Chrome Profile Launcher v{VERSION}')
         
         # Apply theme
         self.apply_theme(self.config.theme)
@@ -1149,13 +1149,13 @@ class ChromeLauncherUI:
         # Create checkboxes for all URLs
         self.url_vars = {}
         urls_to_show = [
-            ('1', 'YouTube Premium'),
-            ('2', 'Google Family'),
-            ('3', 'Netflix'),
-            ('4', 'Gmail'),
-            ('5', 'Disney+'),
-            ('6', 'Amazon Prime'),
-            ('7', 'HBO Max')
+            ('1', 'YouTube Premium | ดูวันตัดบัตร'),
+            ('2', 'YouTube Family | เพิ่ม/ลบ สมาชิก'),
+            ('3', 'Netflix | เพิ่ม/ลบ สมาชิก'),
+            ('4', 'Gmail | ดูเมล'),
+            ('5', 'Disney+ | เพิ่ม/ลบ สมาชิก'),
+            ('6', 'Prime Video | เพิ่ม/ลบ สมาชิก'),
+            ('7', 'HBO Max | เพิ่ม/ลบ สมาชิก')
         ]
         
         # First row
