@@ -1120,7 +1120,7 @@ class ChromeLauncherUI:
         # URL Group with Multiple URLs
         url_frame = tk.LabelFrame(
             self.root,
-            text='URLs - Select profile below, check URLs to open, then click "Open Multiple URLs"',
+            text='URL - เลือกโปรไฟล์ด้านล่าง ตรวจสอบ URL ที่จะเปิด จากนั้นคลิก "เปิด URL หลายรายการ',
             font=('Segoe UI', 10),
             fg=self.text,
             bg=self.panel_bg
