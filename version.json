@@ -1,8 +1,9 @@
 {
-  "version": "2.2.0",
-  "download_url": "https://raw.githubusercontent.com/YOUR_USERNAME/chrome-launcher/main/chrome_launcher_ui_v2.2.py",
+  "version": "2.2.1",
+  "download_url": "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/refs/heads/main/chrome_launcher_ui_v2.2.py",
   "required": false,
   "changelog": [
+    "TEST BUILD - DO NOT UPDATE",
     "Added email sorting by number (ascending order)",
     "Added automatic update checking system",
     "Added manual update check button",
