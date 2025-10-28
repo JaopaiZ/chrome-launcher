@@ -1,16 +1,12 @@
 {
-  "version": "2.2.1",
+  "version": "2.2.2",
   "download_url": "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/refs/heads/main/chrome_launcher_ui_v2.2.py",
   "required": false,
   "changelog": [
-    "TEST BUILD - DO NOT UPDATE",
-    "Added email sorting by number (ascending order)",
-    "Added automatic update checking system",
-    "Added manual update check button",
-    "Improved email display in all lists",
-    "Fixed sorting consistency across favorites and recents",
-    "Better update notifications with changelog display",
-    "One-click update installation"
+    "TEST BUILD - สามารถข้ามการอัปเดตนี้ได้ กด Later เพื่อข้าม",
+    "แก้ไขข้อความ Prime Video ยังใช้ไม่ได้",
+    "แก้ไขข้อความ URL - เลือกโปรไฟล์ด้านล่าง ตรวจสอบ URL ที่จะเปิด จากนั้นคลิก 'เปิด URL หลายรายการ'",
+    "แก้ไข url ของ Prime Video"
   ],
   "release_date": "2024-10-26",
   "min_python_version": "3.7"
