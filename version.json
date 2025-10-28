@@ -1,10 +1,12 @@
 {
-  "version": "2.3.1",
+  "version": "2.4",
   "download_url": "https://raw.githubusercontent.com/JaopaiZ/chrome-launcher/refs/heads/main/chrome_launcher_ui_v2.2.py",
   "required": false,
   "changelog": [
-    "เปลี่ยน URL ดาวน์โหลดเป็นเวอร์ชันล่าสุด",
-    "แก้ไขบั๊กเล็กน้อย"
+    "แก้ไข Bug ในการค้นหา",
+    "เพิ่มการเรียงลำดับของตัวเลขในการค้นหา จาก น้อย ไปมาก",
+    "เพิ่มจาก UPDATE Auto เมื่อโปรแกรมมีการ แก้ไข หรือ เพิ่ม freature ใหม่",
+    "แก้ไขปัญหาอื่นๆ"
   ],
   "release_date": "2024-10-26",
   "min_python_version": "3.7"
