@@ -754,7 +754,7 @@ class ChromeLauncherUI:
             '3': 'https://www.netflix.com/account',
             '4': 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox',
             '5': 'https://www.apps.disneyplus.com/th/home',
-            '6': 'https://www.amazon.co.jp/ap/signin?',
+            '6': 'https://www.primevideo.com/-/th/signup',
             '7': 'https://auth.hbomax.com/login'
         }
         
