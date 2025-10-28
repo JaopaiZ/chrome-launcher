@@ -1,0 +1,17 @@
+{
+  "version": "2.2.0",
+  "download_url": "https://raw.githubusercontent.com/YOUR_USERNAME/chrome-launcher/main/chrome_launcher_ui_v2.2.py",
+  "required": false,
+  "changelog": [
+    "Added email sorting by number (ascending order)",
+    "Added automatic update checking system",
+    "Added manual update check button",
+    "Improved email display in all lists",
+    "Fixed sorting consistency across favorites and recents",
+    "Better update notifications with changelog display",
+    "One-click update installation"
+  ],
+  "release_date": "2024-10-26",
+  "min_python_version": "3.7"
+}
+
