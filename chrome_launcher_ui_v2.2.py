@@ -763,8 +763,8 @@ class ChromeLauncherUI:
             '4': 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox',
             '5': 'https://www.apps.disneyplus.com/th/home',
             '6': 'primevideo.com/-/th/signup',
-            '7': 'https://tenor.com/view/i-love-you-love-loving-kannon-27snowball-gif-4796898195696207031'
-            # '7': 'https://auth.hbomax.com/login'
+            # '7': 'https://media.tenor.com/QpIBfnIvRLcAAAAj/i-love-you-love.gif'
+            '7': 'https://auth.hbomax.com/login'
         }
         
         # Handle CLI mode
