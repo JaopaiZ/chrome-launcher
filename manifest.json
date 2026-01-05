@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "AutoTag PRO",
+  "version": "1.0.0",
+  "description": "Auto tag customers in LINE OA with in-page sidebar.",
+  "action": {
+    "default_title": "AutoTag PRO"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "tabs", "storage", "scripting"],
+  "host_permissions": [
+    "https://chat.line.biz/*",
+    "https://manager.line.biz/*"
+  ],
+  "options_page": "options.html"
+}

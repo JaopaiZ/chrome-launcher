@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AutoTag PRO Settings</title>
+    <style>
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        margin: 24px;
+        background: #f7f7f7;
+        color: #222;
+      }
+      .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 640px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin-bottom: 14px;
+        font-size: 14px;
+      }
+      .row {
+        margin-bottom: 12px;
+      }
+      button {
+        background: #2f6feb;
+        border: none;
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .status {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #555;
+      }
+      .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>AutoTag PRO Settings</h1>
+      <p>ตั้งค่า template และค่า Auto Save เริ่มต้น</p>
+
+      <div class="row">
+        <label for="template-nf">Template: Netflix (NF)</label>
+        <input id="template-nf" type="text" placeholder="NF{DD}" />
+      </div>
+
+      <div class="row">
+        <label for="template-yt">Template: YouTube (YT)</label>
+        <input id="template-yt" type="text" placeholder="YT{DD}" />
+      </div>
+
+      <div class="row">
+        <label for="template-promo">Template: โปรจับคู่ (PROMO)</label>
+        <input id="template-promo" type="text" placeholder="โปรจับคู่ {DD}/{MM}" />
+      </div>
+
+      <div class="checkbox">
+        <input id="auto-save" type="checkbox" />
+        <label for="auto-save">Auto Save เริ่มต้น</label>
+      </div>
+
+      <button id="save">บันทึกการตั้งค่า</button>
+      <div class="status" id="status"></div>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
